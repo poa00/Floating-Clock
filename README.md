@@ -42,8 +42,10 @@ If someone would have some ideas regarding the development, or found some errors
 * [ ] Disable in GameMode or just disable option in tray Menu
 
 
+## Base On
+[===Floating Clock===](https://github.com/BaalTech/Floating-Clock/releases/latest)
 ## Download
-[=== Download: Floating Clock===](https://github.com/BaalTech/Floating-Clock/releases/latest)
+[=== Download: Floating Clock===](https://github.com/b33k3rm1n3r/Floating-Clock/releases/latest)
 ## ScreenShot
 ![Imgur](http://i.imgur.com/CRTL9Rj.png)
 ## Licence: 
