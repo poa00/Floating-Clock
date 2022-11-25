@@ -10,6 +10,7 @@ using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
 
 namespace FloatingClock
 {
+    using System.Globalization;
     using System.Windows.Media;
     using Microsoft.Win32;
 
@@ -69,7 +70,6 @@ namespace FloatingClock
         private void EnableSeconds(bool enable)
         {
             SecondsEnabled = enable;
-            OptionalSeconds.Visibility = enable ? Visibility.Visible : Visibility.Hidden;
             Refresh();
             InitializeRefreshDispatcher();
 
@@ -108,11 +108,9 @@ namespace FloatingClock
         private void LoadCurrentClockData()
         {
             var timeNow = DateTime.Now;
-            Hours.Text = timeNow.ToString("HH");
-            Minutes.Text = timeNow.ToString("mm");
-            Seconds.Text = timeNow.ToString("ss");
-            DayOfTheWeek.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase( timeNow.ToString("dddd"));
-            DayOfTheMonth.Text = timeNow.ToString("dd") + " " + System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(timeNow.ToString("MMMM"));
+            var format = CultureInfo.CurrentCulture.DateTimeFormat;
+            Time.Text = timeNow.ToString(SecondsEnabled ? format.LongTimePattern : format.ShortTimePattern);
+            Date.Text = timeNow.ToString(format.MonthDayPattern);
         }
 
         /// <summary>
