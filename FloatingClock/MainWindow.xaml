@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FloatingClock"
         mc:Ignorable="d"
         WindowStartupLocation="Manual"
 
@@ -17,6 +16,18 @@
             <RowDefinition Height="40*" />
         </Grid.RowDefinitions>
 
+        <StackPanel x:Name="stackPanel" Grid.Column="1" Orientation="Horizontal" Grid.RowSpan="3" Margin="0,-15,0,0">
+            <TextBlock x:Name="Time" Text="HH:MM:SS" VerticalAlignment="Center"
+                       d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" FontSize="85.333"
+                       Margin="0" HorizontalAlignment="Center" FontFamily="Segoe UI Light"
+                       TextOptions.TextFormattingMode="Display" />
+            <Grid Margin="25,10,0,0" VerticalAlignment="Center" Height="66">
+                <TextBlock x:Name="Date" Text="Date" FontSize="32" Margin="0,-8,0,0" VerticalAlignment="Top"
+                           HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment"
+                           FontFamily="Segoe WP SemiLight" FontStretch="Expanded" />
+            </Grid>
+        </StackPanel>
+        <!--
         <StackPanel x:Name="stackPanel" Grid.Column="1" Orientation="Horizontal" Grid.RowSpan="3" Margin="0,-15,0,0">
             <TextBlock x:Name="Hours" Text="15" VerticalAlignment="Center"
                        d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" FontSize="85.333"
@@ -50,6 +61,7 @@
             </Grid>
 
         </StackPanel>
+        -->
         <StackPanel x:Name="BatteryPanel" HorizontalAlignment="Left" Orientation="Horizontal" Margin="-80,0,0,40"
                     Grid.RowSpan="3" VerticalAlignment="Bottom">
             <Image x:Name="BatteryImage" Margin="0,0,10,0" d:LayoutOverrides="LeftPosition, RightPosition" Width="32"

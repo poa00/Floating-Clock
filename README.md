@@ -13,6 +13,15 @@ To show Clock Press **Alt+C**
 
 If someone would have some ideas regarding the development, or found some errors. Please contact me ;)
 
+## 2022 Update (David Hollebeek)
+* Updated to .Net 4.8.2
+* Updated to Visual Studio 2022
+* Fixed security concern that might Marshal a string as ANSI and then pass it to a Windows Unicode API.
+* Improved Regionalization to use standard OS formats rather than constructing the strings in code.
+	- Ex.  The date in the US shows as ""November 25"" instead of the European ""25 November"".
+	- For all cultures supported by Windows the Date and Time should now appear the way a user from that culture would expect.
+
+
 ## 2020 Update
 * Updated to .Net 4.7.2
 * Added storing settings in registry
@@ -33,8 +42,10 @@ If someone would have some ideas regarding the development, or found some errors
 * [ ] Disable in GameMode or just disable option in tray Menu
 
 
+## Base On
+[===Floating Clock===](https://github.com/BaalTech/Floating-Clock/releases/latest)
 ## Download
-[=== Download: Floating Clock===](https://github.com/BaalTech/Floating-Clock/releases/latest)
+[=== Download: Floating Clock===](https://github.com/b33k3rm1n3r/Floating-Clock/releases/latest)
 ## ScreenShot
 ![Imgur](http://i.imgur.com/CRTL9Rj.png)
 ## Licence: 
